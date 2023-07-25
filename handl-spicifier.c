@@ -13,6 +13,10 @@ int (*handl_spicifier(const char fm))(va_list)
 		{'d', print_dec_int},
 		{'i', print_dec_int},
 		{'b', print_binary},
+		{'u', print_unsigned},
+		{'o', print_octal},
+		{'x', print_Hex},
+		{'X', print_Hex},
 		{'\0', NULL}
 	};
 
