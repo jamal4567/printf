@@ -10,7 +10,7 @@ int print_unsigned(va_list num)
 	int d = 1;
 	int count = 0;
 
-	nb = va_arg(nb, unsigned int);
+	nb = va_arg(num, unsigned int);
 
 	while (nb / d > 9)
 		d *= 10;
@@ -55,37 +55,49 @@ int print_octal(va_list args)
 	return (count);
 }
 /**
- * print_Hex - prints to hexadecimal.
- * @nb: number to print
+ * print_hex - prints to hexadecimal.
+ * @nb1: number to print
+ *@nb2: base 16
  * @c: upper or lower
- * Return: count
+ * Return: characyer printed or integer
  */
-int print_Hex(unsigned int nb, char c)
+int print_hex(unsigned int nb1, unsigned int nb2, char c)
 {
-	unsigned int nb2;
-	int i, j, w, count = 0;
-	char *hex;
+	unsigned int a = n % nb2;
+	unsigned int b = n / nb2;
+	char hex;
 
-	for (nb2 = nb; nb2 != 0; count++, num2 /= 16)
-	;
-
-	hex = malloc(count);
-	i = 0;
-	while (nb != 0)
+	if (a > 10)
+		hex = (a - 10) + c;
+	else
+		hex = a + 48;
+	if (b == 0)
 	{
-		w = nb % 16;
-		if (w < 10)
-			hex[i] = w + 48;
-		else
-			hex[i] = w - 10 + c;
-		nb /= 16;
+		return (_putchar(hex));
 	}
-	j = j - 1;
-	while (j >= 0)
+	if (b < nb2)
 	{
-		_putchar(hex[j]);
-		j--;
+		if (b > 10)
+			return (_putchar(b - 10 + c) + _putchar(hex));
+		return (_putchar(b + 48) + _putchar(hex));
 	}
-	free(hex);
-	return (count);
+	return (print_hex(b, nb2, c) + _putchar(hex));
+}
+/**
+ * hex_lower - hexa on lowercase
+ * @args: argument
+ * Return: character printed
+ */
+int hex_lower(va_list args)
+{
+	return (print_hex(va_arg(args, unsigned int), 16, 97));
+}
+/**
+ * hex_upper - hexa on uppercase
+ * @args: argument
+ * Return: character printed
+ */
+int hex_upper(va_list args)
+{
+	return (print_hex(va_arg(args, unsigned int), 16, 65));
 }
