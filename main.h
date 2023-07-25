@@ -27,6 +27,8 @@ int print_dec_int(va_list nb);
 int print_binary(va_list num);
 int print_unsigned(va_list num);
 int print_octal(va_list args);
-int print_Hex(unsigned int nb, char c);
+int print_hex(unsigned int nb1, unsigned int nb2, char c);
+int hex_lower(va_list args);
+int hex_upper(va_list args);
 
 #endif /* Holberton_h */

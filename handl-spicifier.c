@@ -15,8 +15,8 @@ int (*handl_spicifier(const char fm))(va_list)
 		{'b', print_binary},
 		{'u', print_unsigned},
 		{'o', print_octal},
-		{'x', print_Hex},
-		{'X', print_Hex},
+		{'x', hex_lower},
+		{'X', hex_upper},
 		{'\0', NULL}
 	};
 
