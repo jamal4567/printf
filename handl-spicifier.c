@@ -12,6 +12,7 @@ int (*handl_spicifier(const char fm))(va_list)
 		{'s', print_str},
 		{'d', print_dec_int},
 		{'i', print_dec_int},
+		{'b', print_binary},
 		{'\0', NULL}
 	};
 

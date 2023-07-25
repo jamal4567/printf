@@ -24,5 +24,6 @@ int print_char(va_list args);
 int print_str(va_list str);
 int (*handl_spicifier(const char fm))(va_list);
 int print_dec_int(va_list nb);
+int print_binary(va_list num);
 
 #endif /* Holberton_h */
