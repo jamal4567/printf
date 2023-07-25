@@ -1,3 +1,5 @@
+#include "main.h"
+
 /**
  * print_dec_int - print numbers
  * @nb: arguments
@@ -11,7 +13,7 @@ int print_dec_int(va_list nb)
 	int count, variabl, b;
 
 	count = 0;
-	n = va_arg(n, int);
+	n = va_arg(nb, int);
 
 	if (n < 0)
 	{
@@ -21,7 +23,7 @@ int print_dec_int(va_list nb)
 	}
 	if (n >= 0 && n <= 9)
 	{
-		_putchar(number + 48);
+		_putchar(n + 48);
 		count++;
 	}
 	if (n > 9)

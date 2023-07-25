@@ -10,8 +10,8 @@ int (*handl_spicifier(const char fm))(va_list)
 	print_f f[] = {
 		{'c', print_char},
 		{'s', print_str},
-		{'d', print_dec},
-		{'i', print_int},
+		{'d', print_dec_int},
+		{'i', print_dec_int},
 		{'\0', NULL}
 	};
 
