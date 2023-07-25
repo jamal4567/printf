@@ -63,8 +63,8 @@ int print_octal(va_list args)
  */
 int print_hex(unsigned int nb1, unsigned int nb2, char c)
 {
-	unsigned int a = n % nb2;
-	unsigned int b = n / nb2;
+	unsigned int a = nb1 % nb2;
+	unsigned int b = nb1 / nb2;
 	char hex;
 
 	if (a > 10)
