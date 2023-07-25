@@ -18,6 +18,7 @@ int (*handl_spicifier(const char fm))(va_list)
 		{'x', hex_lower},
 		{'X', hex_upper},
 		{'R', _rot13},
+		{'r', print_rev}
 		{'\0', NULL}
 	};
 

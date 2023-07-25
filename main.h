@@ -31,5 +31,6 @@ int print_hex(unsigned int nb1, unsigned int nb2, char c);
 int hex_lower(va_list args);
 int hex_upper(va_list args);
 int _rot13(va_list args);
+int print_rev(va_list args);
 
-#endif /* Holberton_h */
+#endif /* main_h */
